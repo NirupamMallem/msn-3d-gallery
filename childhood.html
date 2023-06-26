@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- add your css file -->
+  <link rel="stylesheet" href="css/style.css" />
+  <title>MSN-3D-GALLERY</title>
+  <style>
+    .hidden-audio {
+      position: absolute;
+      left: -9999px;
+      visibility: hidden;
+    }
+    #navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #c0c028b0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: black;
+}
+  </style>
+</head>
+
+
+
+<body>
+
+    <audio id="bgm-audio" autoplay loop>
+        <source src="childhood.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div id="navbar">
+        <div class="nav-item" data-target="index.html">NOW</div>
+        <div class="nav-item" data-target="childhood.html">CHILDHOOD</div>
+      </div>
+  <!-- <center style="margin: 100px;"><p style="color: aliceblue;"></p> </center> -->
+  <div id="dragcontainer">
+
+    <div id="spincontainer">
+      
+      
+   
+    
+      <img src="img/31.jpg" alt="Mallem Sai Nirupam">
+    
+      <img src="img/37.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/38.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/39.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/20.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/21.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/22.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/23.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/24.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/25.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/26.jpg" alt="Mallem Sai Nirupam">
+     
+      <img src="img/33.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/36.jpg" alt="Mallem Sai Nirupam">
+      
+      <img src="img/32.jpg" alt="Mallem Sai Nirupam">
+      <img src="img/30.jpg" alt="Mallem Sai Nirupam">
+     
+    
+      
+      <p>Use Scroll wheel for Zoom in & Zoom out</p>
+     
+    </div>
+    <div id="ground">
+
+    </div>
+   
+
+  </div>
+
+
+  <!-- add your js file -->
+  <script src="js/index.js">
+    document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('bgm-audio');
+
+    document.addEventListener('click', function() {
+      audio.play().catch(function(error) {
+        console.log(error);
+      });
+      document.removeEventListener('click', arguments.callee);
+    });
+  });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.nav-item').on('click', function() {
+      var target = $(this).data('target');
+      window.location.href = target;
+    });
+  });
+  </script>
+
+</body>
+
+</html>
